@@ -35,3 +35,90 @@ button {
   height: 100%;
   object-fit: cover;
 }
+/* Start Animation Border */
+
+.start-border{
+  position:absolute;
+  inset:0;
+  border:2px solid white;
+  border-radius:999px;
+  border-left-color:white;
+  border-bottom-color:white;
+  border-top-color:transparent;
+  border-right-color:transparent;
+  animation:borderMove 1.2s ease forwards;
+  pointer-events:none;
+}
+
+@keyframes borderMove{
+  0%{
+    transform:rotate(0deg);
+  }
+
+  100%{
+    transform:rotate(180deg);
+  }
+}
+
+
+/* Hover Underline Animation */
+
+.since-badge::before,
+.since-badge::after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:2px;
+  background:white;
+  left:0;
+  transform:scaleX(0);
+  transition:transform 0.4s ease;
+  z-index:5;
+}
+
+.since-badge::before{
+  top:-6px;
+  transform-origin:left;
+}
+
+.since-badge::after{
+  bottom:-6px;
+  transform-origin:right;
+}
+
+.since-badge:hover::before,
+.since-badge:hover::after{
+  transform:scaleX(1);
+}
+
+.start-border-activity{
+  position:absolute;
+  inset:0;
+  border:2px solid transparent;
+  border-radius:999px;
+
+  border-left-color:#244f46;
+  border-bottom-color:#244f46;
+
+  animation:borderMoveActivity 1.2s ease forwards;
+}
+
+@keyframes borderMoveActivity{
+
+  0%{
+    transform:rotate(0deg);
+    border-left-color:#244f46;
+    border-bottom-color:#244f46;
+    border-top-color:transparent;
+    border-right-color:transparent;
+  }
+
+  100%{
+    transform:rotate(180deg);
+    border-left-color:transparent;
+    border-bottom-color:transparent;
+    border-top-color:#244f46;
+    border-right-color:#244f46;
+  }
+
+}
