@@ -1,8 +1,8 @@
 export default function CtaSectionPage() {
   return (
-    <section className="bg-[#2f5d50] py-20 px-6 flex justify-center">
-
-      <div className="relative bg-white rounded-2xl shadow-lg max-w-4xl w-full text-center py-16 px-8 overflow-hidden">
+    <section className="py-11">
+      <div className="flex justify-center pb-35">
+      <div className="absolute bg-white  shadow-inner shadow-[#2f5d50] max-w-7xl w-full text-center py-16 px-8 overflow-hidden">
 
         {/* Left Decorative Blur */}
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-40 bg-green-200 blur-3xl opacity-40"></div>
@@ -25,8 +25,8 @@ export default function CtaSectionPage() {
           Apply Now
         </button>
 
-      </div>
-
+      </div> 
+      </div> 
     </section>
   );
 }
