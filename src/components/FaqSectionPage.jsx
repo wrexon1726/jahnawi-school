@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { Plus, Minus } from "lucide-react";
+import { Plus } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
@@ -33,14 +34,14 @@ const faqs = [
 ];
 
 export default function FaqSectionPage() {
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(null);
 
   const toggle = (index) => {
     setActive(active === index ? null : index);
   };
 
   return (
-    <section className="py-10 px-6 bg-gray-50">
+    <section className="py-20 px-6 bg-gray-50">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
@@ -49,31 +50,37 @@ export default function FaqSectionPage() {
             FAQ
           </span>
 
-          <h2 className="text-3xl font-bold mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold mt-4">
             Frequently Asked Questions?
           </h2>
         </div>
 
         {/* Content */}
-        <div className="grid md:grid-cols-2 gap-10 items-start">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
 
           {/* Left Image */}
-          <div className="relative h-[420px]">
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative h-[420px] overflow-hidden rounded-2xl"
+          >
             <Image
               src="/images/college.jpg"
               alt="University"
               fill
-              className="rounded-2xl object-cover"
+              className="object-cover transition duration-500 hover:scale-105"
             />
-          </div>
+          </motion.div>
 
           {/* Accordion */}
           <div className="space-y-4">
 
             {faqs.map((faq, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="bg-white rounded-xl border p-5"
+                layout
+                className="bg-white rounded-xl border p-5 shadow-sm hover:shadow-md transition"
               >
                 <button
                   onClick={() => toggle(index)}
@@ -81,20 +88,29 @@ export default function FaqSectionPage() {
                 >
                   {faq.question}
 
-                  {active === index ? (
-                    <Minus size={18} />
-                  ) : (
+                  <motion.div
+                    animate={{ rotate: active === index ? 45 : 0 }}
+                    transition={{ duration: 0.2 }}
+                  >
                     <Plus size={18} />
-                  )}
+                  </motion.div>
                 </button>
 
-                {active === index && (
-                  <p className="text-gray-500 mt-3 text-sm leading-relaxed">
-                    {faq.answer}
-                  </p>
-                )}
+                <AnimatePresence>
+                  {active === index && (
+                    <motion.p
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="text-gray-500 mt-3 text-sm leading-relaxed overflow-hidden"
+                    >
+                      {faq.answer}
+                    </motion.p>
+                  )}
+                </AnimatePresence>
 
-              </div>
+              </motion.div>
             ))}
 
           </div>

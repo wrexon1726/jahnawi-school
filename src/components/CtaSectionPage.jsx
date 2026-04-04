@@ -1,6 +1,6 @@
 export default function CtaSectionPage() {
   return (
-    <section className="py-11">
+    <section className="py-24">
       <div className="flex justify-center pb-35">
       <div className="absolute bg-white  shadow-inner shadow-[#2f5d50] max-w-7xl w-full text-center py-16 px-8 overflow-hidden">
 

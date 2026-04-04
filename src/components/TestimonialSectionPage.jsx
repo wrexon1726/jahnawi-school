@@ -1,4 +1,7 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 const testimonials = [
   {
@@ -37,12 +40,12 @@ export default function TestimonialSectionPage() {
       <div className="max-w-6xl mx-auto">
 
         {/* Heading */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-14">
           <span className="bg-gray-200 px-4 py-1 rounded-full text-sm">
             Testimonials
           </span>
 
-          <h2 className="text-3xl font-bold mt-4">
+          <h2 className="text-3xl md:text-4xl font-bold mt-4">
             Voices From Our Global Community
           </h2>
         </div>
@@ -51,9 +54,12 @@ export default function TestimonialSectionPage() {
         <div className="grid md:grid-cols-3 gap-6">
 
           {/* Highlight Card */}
-          <div className="bg-[#2f5d50] text-white p-6 rounded-2xl col-span-1 md:row-span-2 flex flex-col justify-between">
-
-            <p className="text-sm leading-relaxed">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            className="bg-gradient-to-br from-[#2f5d50] to-[#24493f] text-white p-6 rounded-2xl md:row-span-2 flex flex-col justify-between shadow-lg"
+          >
+            <p className="text-sm leading-relaxed opacity-90">
               "Study-based learning experience helped me understand concepts
               better and build real projects."
             </p>
@@ -61,9 +67,9 @@ export default function TestimonialSectionPage() {
             <div className="flex items-center gap-3 mt-6">
               <Image
                 src="/images/main.jpg"
-                width={40}
-                height={40}
-                className="rounded-full object-contain"
+                width={42}
+                height={42}
+                className="rounded-full object-cover"
                 alt="user"
               />
               <div>
@@ -75,38 +81,50 @@ export default function TestimonialSectionPage() {
                 </p>
               </div>
             </div>
-          </div>
+          </motion.div>
 
           {/* Other Testimonials */}
-          {testimonials.map((item) => (
-            <div
+          {testimonials.map((item, index) => (
+            <motion.div
               key={item.id}
-              className="bg-white p-6 rounded-2xl shadow-sm"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -5 }}
+              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
             >
-              <p className="text-gray-600 text-sm">
+              <p className="text-gray-600 text-sm leading-relaxed">
                 {item.text}
               </p>
 
               <div className="flex items-center gap-3 mt-6">
-                <Image
-                  src={item.image}
-                  width={36}
-                  height={36}
-                  className="rounded-full object-contain"
-                  alt={item.name}
-                />
+
+                {/* Image */}
+                <div className="overflow-hidden rounded-full">
+                  <Image
+                    src={item.image}
+                    width={36}
+                    height={36}
+                    className="object-cover transition duration-300 hover:scale-110"
+                    alt={item.name}
+                  />
+                </div>
 
                 <div>
                   <p className="text-sm font-semibold">
                     {item.name}
                   </p>
 
-                  <div className="text-yellow-500 text-xs">
-                    ⭐⭐⭐⭐⭐
+                  {/* Dynamic Stars */}
+                  <div className="flex text-yellow-500 text-xs">
+                    {Array.from({ length: item.rating }).map((_, i) => (
+                      <span key={i}>★</span>
+                    ))}
                   </div>
                 </div>
+
               </div>
-            </div>
+            </motion.div>
           ))}
 
         </div>
