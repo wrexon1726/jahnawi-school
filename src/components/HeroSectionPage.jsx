@@ -36,8 +36,8 @@ export default function HeroSectionPage() {
           {/* Buttons */}
           <div className="flex gap-4 mt-6">
 
-            <button className="bg-[#2f5d50] text-white px-6 py-3 rounded-full 
-              hover:scale-105 hover:bg-[#24493f] transition duration-300 shadow-md">
+            <button className="border   border-[#2f5d50] text-[#2f5d50] px-6 py-3 rounded-full 
+              hover:scale-105 hover:bg-[#24493f] hover:text-white transition duration-300 shadow-md">
               Apply Now
             </button>
 
@@ -86,7 +86,7 @@ export default function HeroSectionPage() {
           {/* Main Image */}
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/images/university.jpg"
+              src="/images/School.jpeg"
               alt="college"
               width={650}
               height={650}
@@ -103,7 +103,7 @@ export default function HeroSectionPage() {
             className="absolute bottom-5 -left-10 bg-white p-3 rounded-2xl shadow-xl"
           >
             <img
-              src="/images/students.jpg"
+              src="/images/students.jpeg"
               className="w-48 h-32 object-cover rounded-xl"
             />
           </motion.div>

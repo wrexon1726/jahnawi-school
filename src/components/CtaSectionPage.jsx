@@ -21,9 +21,10 @@ export default function CtaSectionPage() {
           to excellence, innovation, and global opportunity.
         </p>
 
-        <button className="mt-8 bg-[#2f5d50] text-white px-6 py-3 rounded-full hover:bg-[#24493f] transition">
-          Apply Now
-        </button>
+            <button className="mt-2 border border-[#2f5d50] text-[#2f5d50] px-6 py-3 rounded-full 
+              hover:scale-105 hover:bg-[#24493f] hover:text-white transition duration-300 shadow-md">
+              Apply Now
+            </button>
 
       </div> 
       </div> 
