@@ -6,7 +6,7 @@ export default function ActivityEventPage() {
   return (
     <>
       <Header/>
-      <ActivityEventSection />
+       <ActivityEventSection />    /*Replace this with Contact Form*/ 
       <Footer/>
     </>
   );

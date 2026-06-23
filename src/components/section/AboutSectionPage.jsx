@@ -15,30 +15,30 @@ export default function AboutSectionPage() {
   const sectionRef = useRef(null);
 
 
-useEffect(() => {
+  useEffect(() => {
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setShow(true);
-        }
-      });
-    },
-    { threshold: 0.3 }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setShow(true);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
 
-  if (sectionRef.current) {
-    observer.observe(sectionRef.current);
-  }
-
-  return () => {
     if (sectionRef.current) {
-      observer.unobserve(sectionRef.current);
+      observer.observe(sectionRef.current);
     }
-  };
 
-}, []);
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+
+  }, []);
 
   useEffect(() => {
 
@@ -72,11 +72,11 @@ useEffect(() => {
   }, []);
 
   return (
-    
+
     <section
-ref={sectionRef}
-className="w-full bg-[#2f6b5f] text-white py-20 px-6"
->
+      ref={sectionRef}
+      className="w-full text-black py-20 px-6"
+    >
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 max-[722px]:grid-cols-1 gap-12 items-center">
 
@@ -106,11 +106,11 @@ className="w-full bg-[#2f6b5f] text-white py-20 px-6"
           <div className="grid grid-cols-2 mt-10 gap-10">
 
             {/* 30% */}
-            <div>
+            <div className="bg-[#2f5d50]">
 
-              <h2 className="text-6xl font-bold">{count30}%</h2>
+              <h2 className=" text-6xl text-gray-200 font-bold flex items-center justify-center">{count30}%</h2>
 
-              <p className="text-sm mt-3 text-gray-200 mb-6">
+              <p className="text-sm mt-3 text-gray-200 mb-6 flex items-center justify-center">
                 Daily Growing Students are <br /> still growing
               </p>
 
@@ -124,11 +124,11 @@ className="w-full bg-[#2f6b5f] text-white py-20 px-6"
             </div>
 
             {/* 95% */}
-            <div className="border-l border-gray-300 pl-8">
+            <div className="bg-[#2f5d50] border-l border-gray-300 pl-8">
 
-              <h2 className="text-6xl font-bold">{count95}%</h2>
+              <h2 className="text-6xl text-gray-200 font-bold flex items-center justify-center">{count95}%</h2>
 
-              <p className="text-sm mt-3 text-gray-200 mb-6">
+              <p className="text-sm mt-3 text-gray-200 mb-6 flex items-center justify-center">
                 They are in a job related to their field of study
               </p>
 
@@ -148,24 +148,25 @@ className="w-full bg-[#2f6b5f] text-white py-20 px-6"
         {/* RIGHT SIDE */}
         <div>
 
-<div className="since-badge relative inline-block px-10 py-3 bg-white/20 text-sm rounded-full text-white overflow-hidden">
+          <div className="bg-[#2f5d50] since-badge relative inline-block px-10 py-3 text-sm rounded-full text-white overflow-hidden">
 
-  {/* Start Border Animation */}
-  <span className="start-border"></span>
+            {/* Start Border Animation */}
+            <span className="start-border"></span>
 
-  <span className="relative z-10">SINCE 1970</span>
+            <span className="relative z-10">SINCE 1970</span>
 
-</div>
+          </div>
+          <div className="bg-[#2f5d50]">
+            <h2 className="text-3xl text-gray-200 md:text-4xl font-bold mt-6 leading-snug">
+              The right opportunity can turn dreams into limitless potential.
+            </h2>
 
-          <h2 className="text-3xl md:text-4xl font-bold mt-6 leading-snug">
-            The right opportunity can turn dreams into limitless potential.
-          </h2>
-
-          <p className="text-gray-200 mt-4">
-            Founded in 1970, our institute is a community driven institution
-            renowned for its unique contributions to education and student
-            success.
-          </p>
+            <p className="text-gray-200 mt-4">
+              Founded in 1970, our institute is a community driven institution
+              renowned for its unique contributions to education and student
+              success.
+            </p>
+          </div>
 
           {/* RIGHT IMAGE */}
           <div
