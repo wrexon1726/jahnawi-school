@@ -71,7 +71,7 @@ export default function ContactSection() {
                 src="/images/im9.jpeg"
                 alt="Contact Us"
                 fill
-                className="object-cover hover:scale-110 transition duration-500"
+                className="object-fit hover:scale-110 transition duration-500"
               />
             </div>
           </div>
