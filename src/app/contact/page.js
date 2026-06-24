@@ -1,13 +1,9 @@
-import Footer from "@/components/common/Footer";
-import Header from "@/components/common/Header";
-import ActivityEventSection from "@/components/section/activityeventsection";
+import ContactSection from "@/components/section/ContectusSectionPage";
 
-export default function ActivityEventPage() {
+export default function ContactPage() {
   return (
-    <>
-      <Header/>
-       <ActivityEventSection />    /*Replace this with Contact Form*/ 
-      <Footer/>
-    </>
+    <main className="pt-24">
+      <ContactSection />
+    </main>
   );
 }
