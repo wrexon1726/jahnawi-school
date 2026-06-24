@@ -64,11 +64,11 @@ export default function ContactSection() {
                 : "-translate-x-40 opacity-0"
             }`}
           >
-            <div className="absolute -top-3 -left-3 w-full h-full border-4 border-[#2f6b5f]"></div>
+            <div className="absolute -top-1 -left-1 w-full h-full border-4 border-[#2f6b5f]"></div>
 
             <div className="relative w-full h-full overflow-hidden">
               <Image
-                src="/contactimage/contact.jpg"
+                src="/images/im9.jpeg"
                 alt="Contact Us"
                 fill
                 className="object-cover hover:scale-110 transition duration-500"

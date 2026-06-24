@@ -66,10 +66,10 @@ export default function FaqSectionPage() {
             className="relative h-[420px] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/images/college.jpg"
+              src="/images/im10.jpeg"
               alt="University"
               fill
-              className="object-cover transition duration-500 hover:scale-105"
+              className="object-fit transition duration-500 hover:scale-105"
             />
           </motion.div>
 

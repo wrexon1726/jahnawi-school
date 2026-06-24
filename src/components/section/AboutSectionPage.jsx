@@ -75,11 +75,17 @@ export default function AboutSectionPage() {
 
     <section
       ref={sectionRef}
-      className="w-full text-black py-20 px-6"
+      className=" py-20 px-6"
     >
+    <div className="flex items-center justify-center px-10 py-5">  
+      <span className="text-[#2f5d50] font-bold px-6 py-3 rounded-full 
+              hover:scale-105 hover:bg-[#2f5d50] hover:text-white transition duration-300 shadow-md">
+              SINCE 1970
+        </span> 
+    </div>
 
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 max-[722px]:grid-cols-1 gap-12 items-center">
-
+        
         {/* LEFT SIDE */}
         <div>
 
@@ -89,14 +95,14 @@ export default function AboutSectionPage() {
             ${show ? "translate-x-0 opacity-100" : "-translate-x-40 opacity-0"}`}
           >
 
-            <div className="absolute -top-2 -left-2 w-full h-full border-7 border-gray-200"></div>
+            <div className="absolute -top-1 -left-1 w-full h-full border-5 border-[#2f5d50]"></div>
 
             <div className="relative w-full h-[105%] overflow-hidden">
               <Image
-                src="/aboutimage/image1.jpg"
+                src="/images/im5.jpeg"
                 alt="Graduates"
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-107"
+                className="object-fit transition-transform duration-500 group-hover:scale-107"
               />
             </div>
 
@@ -106,15 +112,15 @@ export default function AboutSectionPage() {
           <div className="grid grid-cols-2 mt-10 gap-10">
 
             {/* 30% */}
-            <div className="bg-[#2f5d50]">
+            <div className="">
 
-              <h2 className=" text-6xl text-gray-200 font-bold flex items-center justify-center">{count30}%</h2>
+              <h2 className=" text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{count30}%</h2>
 
-              <p className="text-sm mt-3 text-gray-200 mb-6 flex items-center justify-center">
+              <p className="text-sm mt-3 text-[#2f5d50] mb-6 flex items-center justify-center">
                 Daily Growing Students are <br /> still growing
               </p>
 
-              <div className="w-full h-[3px] bg-gray-400">
+              <div className="w-full h-[3px] bg-[#2f5d50]">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
                   style={{ width: progress30 + "%" }}
@@ -124,15 +130,15 @@ export default function AboutSectionPage() {
             </div>
 
             {/* 95% */}
-            <div className="bg-[#2f5d50] border-l border-gray-300 pl-8">
+            <div className=" border-l border-gray-300 pl-8">
 
-              <h2 className="text-6xl text-gray-200 font-bold flex items-center justify-center">{count95}%</h2>
+              <h2 className="text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{count95}%</h2>
 
-              <p className="text-sm mt-3 text-gray-200 mb-6 flex items-center justify-center">
+              <p className="text-sm mt-3 text-[#2f5d50] mb-6 flex items-center justify-center">
                 They are in a job related to their field of study
               </p>
 
-              <div className="w-full h-[3px] bg-gray-400">
+              <div className="w-full h-[3px] bg-[#2f5d50]">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
                   style={{ width: progress95 + "%" }}
@@ -148,20 +154,19 @@ export default function AboutSectionPage() {
         {/* RIGHT SIDE */}
         <div>
 
-          <div className="bg-[#2f5d50] since-badge relative inline-block px-10 py-3 text-sm rounded-full text-white overflow-hidden">
+          <div className=" border-1px border-[#2f5d50] since-badge relative inline-block px-10 py-3 text-sm rounded-full text-white overflow-hidden">
 
             {/* Start Border Animation */}
-            <span className="start-border"></span>
-
-            <span className="relative z-10">SINCE 1970</span>
+        
+            
 
           </div>
-          <div className="bg-[#2f5d50]">
-            <h2 className="text-3xl text-gray-200 md:text-4xl font-bold mt-6 leading-snug">
+          <div className="">
+            <h2 className="text-3xl text-[#2f5d50] md:text-4xl font-bold mt-6 leading-snug">
               The right opportunity can turn dreams into limitless potential.
             </h2>
 
-            <p className="text-gray-200 mt-4">
+            <p className="text-[#2f5d50] mt-4">
               Founded in 1970, our institute is a community driven institution
               renowned for its unique contributions to education and student
               success.
@@ -174,14 +179,14 @@ export default function AboutSectionPage() {
             ${show ? "translate-x-0 opacity-100" : "translate-x-40 opacity-0"}`}
           >
 
-            <div className="absolute -top-2 -left-2 w-full h-[105%] border-7 border-gray-200">
+            <div className="absolute -top-1 -left-1 w-full h-[105%] border-5 border-[#2f5d50]">
 
               <div className="relative w-[103%] h-[105%] overflow-hidden">
                 <Image
-                  src="/aboutimage/image2.avif"
+                  src="/images/im7.jpeg"
                   alt="Students"
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-fit transition-transform duration-500 group-hover:scale-110"
                 />
               </div>
 

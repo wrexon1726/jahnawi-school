@@ -7,7 +7,7 @@ export default function HeroSectionPage() {
   return (
     <div>
 
-      <section className="grid md:grid-cols-2 gap-10 items-center px-10 py-30">
+      <section className="grid md:grid-cols-2  items-center px-20 py-40">
 
         {/* Left Content */}
         <motion.div
@@ -86,11 +86,11 @@ export default function HeroSectionPage() {
           {/* Main Image */}
           <div className="overflow-hidden rounded-3xl">
             <Image
-              src="/images/university.jpg"
+              src="/images/im3.jpeg"
               alt="college"
-              width={650}
+              width={750}
               height={650}
-              className="object-cover transition duration-500 hover:scale-105"
+              className="object-cover transition duration-500 hover:scale-105 "
             />
           </div>
 
@@ -100,11 +100,11 @@ export default function HeroSectionPage() {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.4 }}
             whileHover={{ scale: 1.05 }}
-            className="absolute bottom-5 -left-10 bg-white p-3 rounded-2xl shadow-xl"
+            className="absolute bottom-5 -left-10 bg-[#2f5d50] p-0.5  rounded-2xl shadow-xl"
           >
             <img
-              src="/images/students.jpg"
-              className="w-48 h-32 object-cover rounded-xl"
+              src="/images/im8.jpeg"
+              className="w-48 h-32 object-fit rounded-xl"
             />
           </motion.div>
 
