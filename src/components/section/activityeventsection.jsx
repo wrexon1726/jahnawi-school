@@ -30,17 +30,17 @@ const cards = [
   {
     title: "Inspiring Student Life",
     text: "We have focused on generating new knowledge & providing modern learning experiences.",
- image: "/activityevent/image6.png"
+ image: "/images/im10.jpeg"
   },
   {
     title: "Education Affordability",
     text: "We help students access education through scholarships and flexible learning systems.",
-    image: "/activityevent/image4.png"
+    image: "/images/im9.jpeg"
   },
   {
     title: "Core-level Academics solutions",
     text: "High quality academic systems that prepare students for the real world.",
-    image: "/activityevent/image5.png"
+    image: "/images/im5.jpeg"
   }
 ];
 

@@ -66,7 +66,7 @@ export default function FaqSectionPage() {
             className="relative h-[420px] overflow-hidden rounded-2xl"
           >
             <Image
-              src="/images/im10.jpeg"
+              src="/images/im11.jpeg"
               alt="University"
               fill
               className="object-fit transition duration-500 hover:scale-105"
