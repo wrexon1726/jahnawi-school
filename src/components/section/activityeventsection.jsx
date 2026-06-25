@@ -51,60 +51,56 @@ const cards = [
       className="w-full bg-[#f7f8f9] py-24 px-6"
     >
 
-      <div className="max-w-7xl mx-auto text-center">
+      <div className="max-w-7xl mx-auto text-center p-5">
 
         {/* badge */}
-        <div className="since-badge border border-gray-300 relative inline-block px-10 py-3 bg-gray/20 text-sm rounded-full text-white overflow-hidden">
+      <div className="since-badge border border-gray-300 relative inline-block px-10 py-3 bg-gray/20 text-sm rounded-full text-white overflow-hidden">
 
-  {/* Start Border Animation */}
-  <span className="start-border-activity"></span>
-
-  <span className="relative z-10  text-sm text-gray-700">  Why Choose Us</span>
-
-</div>
-      
-
+        {/* Start Border Animation */}
+        <span className="start-border-activity"></span>
+        <span className="relative z-10  text-sm text-gray-700">  Why Choose Us</span>
+      </div>
+    
         {/* heading */}
-        <h2
-className={`text-3xl md:text-4xl font-bold text-gray-900 max-w-3xl mx-auto
-transform transition-all duration-700
-${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
->
-One of the largest, most diverse universities in the World
-</h2>
+      <h2
+        className={`text-3xl md:text-4xl font-bold text-gray-900 max-w-3xl mx-auto
+        transform transition-all duration-700 mt-5
+        ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      > One of the largest, most diverse universities in the World
+      </h2>
 
-       <p
-className={`text-gray-500 mt-4 max-w-2xl mx-auto
-transform transition-all duration-700 delay-200
-${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
->
-Home to students from every corner of the globe, fostering diversity,
-inclusion, and world-class academic excellence.
-</p>
+      <p
+        className={`text-gray-500 mt-5 max-w-2xl mx-auto
+        transform transition-all duration-700 delay-200 
+        ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+      >
+      Home to students from every corner of the globe, fostering diversity,
+      inclusion, and world-class academic excellence.
+      </p>
 
         {/* cards */}
-        <div className="grid md:grid-cols-3 max-[722px]:grid-cols-1 gap-8 mt-16">
+        <div className="grid md:grid-cols-3 max-[722px]:grid-cols-1 gap-8 mt-5">
 
           {cards.map((card, index) => (
 
             <div
-  key={index}
-  className={`group bg-white  rounded-2xl p-10 border border-transparent shadow-md 
-  transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
-  hover:border-[#2f6b5f] hover:scale-105
-  ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
->
+            key={index}
+            className={`group bg-white  rounded-2xl p-10 border border-transparent shadow-md 
+            transition-all duration-500 hover:-translate-y-2 hover:shadow-xl 
+            hover:border-[#2f6b5f] hover:scale-105
+            ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-20"}`}
+            >
 
- <div className="relative w-[110px] h-[110px] mx-auto mb-6 transition-transform duration-500 group-hover:scale-125">
+          <div className="relative w-full h-56 mb-6 transition-transform duration-500 group-hover:scale-100">
 
-  <Image
-    src={card.image}
-    alt={card.title}
-    fill
-    className="object-contain"
-  />
+          <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          className="object-fit"
+          />
 
-</div>
+          </div>
 
   <h3 className="text-xl font-semibold text-gray-800">
     {card.title}

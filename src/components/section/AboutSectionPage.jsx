@@ -120,9 +120,9 @@ export default function AboutSectionPage() {
                 Daily Growing Students are <br /> still growing
               </p>
 
-              <div className="w-full h-[3px] bg-[#2f5d50]">
+              <div className="w-full h-[3px] bg-white">
                 <div
-                  className="h-[3px] bg-white transition-all duration-300"
+                  className="h-[3px] bg-[#2f5d50] transition-all duration-300"
                   style={{ width: progress30 + "%" }}
                 ></div>
               </div>
@@ -138,9 +138,9 @@ export default function AboutSectionPage() {
                 They are in a job related to their field of study
               </p>
 
-              <div className="w-full h-[3px] bg-[#2f5d50]">
+              <div className="w-full h-[3px] bg-white">
                 <div
-                  className="h-[3px] bg-white transition-all duration-300"
+                  className="h-[3px] bg-[#2f5d50] transition-all duration-300"
                   style={{ width: progress95 + "%" }}
                 ></div>
               </div>
