@@ -92,7 +92,7 @@ export default function AboutSectionPage() {
 
             <div className="relative w-full h-[105%] overflow-hidden">
               <Image
-                src="/images/im5.jpeg"
+                src="/images/im8.jpeg"
                 alt="Graduates"
                 fill
                 className="object-fit transition-transform duration-500 group-hover:scale-107"
@@ -113,7 +113,7 @@ export default function AboutSectionPage() {
                 Care, Creativity and <br/> Values for Children
               </p>
 
-              <div className="w-full h-[3px] bg-[#2f5d50]">
+              <div className="w-full h-[3px] bg-white">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
                   style={{ width: progress100 + "%" }}
@@ -131,7 +131,7 @@ export default function AboutSectionPage() {
                 Parent Satisfaction & <br/>Academic Success 
               </p>
 
-              <div className="w-full h-[3px] bg-[#2f5d50]">
+              <div className="w-full h-[3px] bg-white">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
                   style={{ width: progressa100 + "%" }}
