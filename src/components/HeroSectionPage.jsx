@@ -21,10 +21,10 @@ export default function HeroSectionPage() {
           </span>
 
           <h1 className="text-5xl font-bold mt-6 leading-tight">
-            Turn Your Ambition <br />
-            into{" "}
+            Nurturing Young Minds from LKG to Grade 8
+            <span className="italic text-[#2f5d50]"> — Jahnawi School</span> Building strong foundations with<br/> 
             <span className="italic text-[#2f5d50]">
-              Achievement
+              creativity, and holistic learning.”
             </span>
           </h1>
 
@@ -38,12 +38,12 @@ export default function HeroSectionPage() {
 
             <button className="bg-[#2f5d50] text-white px-6 py-3 rounded-full 
               hover:scale-105 hover:bg-[#24493f] transition duration-300 shadow-md">
-              Apply Now
+              Admission Open 
             </button>
 
             <button className="border px-6 py-3 rounded-full 
               hover:bg-gray-100 hover:scale-105 transition duration-300">
-              Explore Campus
+              Explore School 
             </button>
 
           </div>
@@ -52,9 +52,9 @@ export default function HeroSectionPage() {
           <div className="flex items-center gap-6 mt-10">
 
             <div className="hover:scale-105 transition">
-              <h2 className="text-3xl font-bold">99%</h2>
+              <h2 className="text-3xl font-bold">100%</h2>
               <p className="text-gray-500 text-sm">
-                Our Success Rate
+                8th Board Result 
               </p>
             </div>
 
@@ -68,7 +68,7 @@ export default function HeroSectionPage() {
             </div>
 
             <span className="text-sm text-gray-500">
-              30k+ Students
+              300+ Students
             </span>
 
           </div>

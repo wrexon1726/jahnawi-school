@@ -7,27 +7,27 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const faqs = [
   {
-    question: "What programs does the university offer?",
+    question: "What classes are offered at Jahnawi Vidya Mandir Resedential School?",
     answer:
       "We offer a wide range of undergraduate, postgraduate and research programs across disciplines.",
   },
   {
-    question: "How can I apply for admission?",
+    question: "How can parents apply for admission?",
     answer:
       "You can apply online through our admission portal by submitting required documents.",
   },
   {
-    question: "Are scholarships or financial aid available?",
+    question: "Are scholarships or fee concession available?",
     answer:
       "Yes, the university offers scholarships based on merit and financial need.",
   },
   {
-    question: "Does the university provide on-campus accommodation?",
+    question: "Does the school provide transport facilities?",
     answer:
       "Yes, comfortable hostels and housing facilities are available for students.",
   },
   {
-    question: "What support services are available for students?",
+    question: "What extracurricular activities are available for children?",
     answer:
       "We provide career counseling, mentoring programs, and student support services.",
   },

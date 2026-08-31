@@ -28,18 +28,18 @@ export default function ActivityEventSection() {
 
 const cards = [
   {
-    title: "Inspiring Student Life",
-    text: "We have focused on generating new knowledge & providing modern learning experiences.",
+    title: " Creative Arts  ",
+    text: "Drawing, painting, craft workshops, music, and dance classes to spark imagination.",
  image: "/activityevent/image6.png"
   },
   {
-    title: "Education Affordability",
-    text: "We help students access education through scholarships and flexible learning systems.",
+    title: "Sports & Fitness ",
+    text: "Games like football, cricket, badminton, yoga, and regular fitness activities to build teamwork and health.",
     image: "/activityevent/image4.png"
   },
   {
-    title: "Core-level Academics solutions",
-    text: "High quality academic systems that prepare students for the real world.",
+    title: "Academic Clubs ",
+    text: "Storytelling, reading circles, science experiments, and math puzzles to make learning interactive.",
     image: "/activityevent/image5.png"
   }
 ];
@@ -70,16 +70,15 @@ className={`text-3xl md:text-4xl font-bold text-gray-900 max-w-3xl mx-auto
 transform transition-all duration-700
 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
 >
-One of the largest, most diverse universities in the World
+At Jahnawi School — From LKG to Class 8, we encourage children to learn beyond books through fun, creative, and engaging experiences
 </h2>
 
-       <p
+  <p
 className={`text-gray-500 mt-4 max-w-2xl mx-auto
 transform transition-all duration-700 delay-200
 ${show ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
 >
-Home to students from every corner of the globe, fostering diversity,
-inclusion, and world-class academic excellence.
+Every activity is designed to balance academics with creativity, ensuring holistic growth for children from LKG to Class 8.
 </p>
 
         {/* cards */}

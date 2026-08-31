@@ -7,23 +7,23 @@ import { motion } from "framer-motion";
 const newsData = [
   {
     date: "Jan 04, 2025",
-    title: "How can I apply for admission?",
+    title: "Parenting & Early Learning?",
   },
   {
     date: "Jan 05, 2025",
-    title: "How can I apply for admission?",
+    title: "School Activities & Events?",
   },
   {
     date: "Jan 06, 2025",
-    title: "How can I apply for admission?",
+    title: "Student Achievements?",
   },
   {
     date: "Jan 07, 2025",
-    title: "How can I apply for admission?",
+    title: "Educational Insights?",
   },
   {
     date: "Jan 08, 2025",
-    title: "How can I apply for admission?",
+    title: "Community & Updates?",
   },
 ];
 
@@ -39,11 +39,11 @@ export default function NewsSectionPage() {
 
           <div>
             <span className="bg-white/20 text-sm px-4 py-1 rounded-full backdrop-blur">
-              Blog & News
+              Blog & Announcement
             </span>
 
             <h2 className="text-3xl md:text-4xl font-bold mt-4">
-              News about our university
+            Blog & Announcement about our School 
             </h2>
           </div>
 

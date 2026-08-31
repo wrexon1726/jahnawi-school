@@ -94,8 +94,7 @@ export default function ContactSection() {
             </h2>
 
             <p className="text-gray-600 mt-4 mb-8">
-              Have questions about admissions, courses, or student life?
-              Fill out the form below and our team will contact you soon.
+              We’re here to help parents and guardians connect with Jahnawi School. Reach out for admissions, activities, or general inquiries.
             </p>
 
             {/* FORM */}

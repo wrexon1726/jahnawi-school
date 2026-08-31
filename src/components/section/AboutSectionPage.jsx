@@ -5,17 +5,19 @@ import { useEffect, useState, useRef } from "react";
 
 export default function AboutSectionPage() {
 
-  const [count30, setCount30] = useState(1);
-  const [count95, setCount95] = useState(1);
+  const [count100, setCount100] = useState(0);
+  const [counta100, setCounta100] = useState(0);
 
-  const [progress30, setProgress30] = useState(0);
-  const [progress95, setProgress95] = useState(0);
+  const [progress100, setProgress100] = useState(0);
+  const [progressa100, setProgressa100] = useState(0);
 
   const [show, setShow] = useState(false);
   const sectionRef = useRef(null);
 
 
   useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -28,48 +30,39 @@ export default function AboutSectionPage() {
       { threshold: 0.3 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    observer.observe(section);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      observer.unobserve(section);
     };
-
   }, []);
 
   useEffect(() => {
+    if (!show) return;
 
-    const interval30 = setInterval(() => {
-      setCount30((prev) => {
-        if (prev >= 30) {
-          clearInterval(interval30);
-          return 30;
-        }
-        setProgress30(prev + 1);
-        return prev + 1;
+    const interval100 = setInterval(() => {
+      setCount100((prev) => {
+        const next = Math.min(prev + 1, 100);
+        setProgress100(next);
+        if (next >= 100) clearInterval(interval100);
+        return next;
       });
     }, 50);
 
-    const interval95 = setInterval(() => {
-      setCount95((prev) => {
-        if (prev >= 95) {
-          clearInterval(interval95);
-          return 95;
-        }
-        setProgress95(prev + 1);
-        return prev + 1;
+    const intervala100 = setInterval(() => {
+      setCounta100((prev) => {
+        const next = Math.min(prev + 1, 100);
+        setProgressa100(next);
+        if (next >= 100) clearInterval(intervala100);
+        return next;
       });
     }, 40);
 
     return () => {
-      clearInterval(interval30);
-      clearInterval(interval95);
+      clearInterval(interval100);
+      clearInterval(intervala100);
     };
-
-  }, []);
+  }, [show]);
 
   return (
 
@@ -80,7 +73,7 @@ export default function AboutSectionPage() {
     <div className="flex items-center justify-center px-10 py-5">  
       <span className="text-[#2f5d50] font-bold px-6 py-3 rounded-full 
               hover:scale-105 hover:bg-[#2f5d50] hover:text-white transition duration-300 shadow-md">
-              SINCE 1970
+              SINCE 1999
         </span> 
     </div>
 
@@ -114,34 +107,34 @@ export default function AboutSectionPage() {
             {/* 30% */}
             <div className="">
 
-              <h2 className=" text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{count30}%</h2>
+              <h2 className=" text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{count100}%</h2>
 
               <p className="text-sm mt-3 text-[#2f5d50] mb-6 flex items-center justify-center">
-                Daily Growing Students are <br /> still growing
+                Care, Creativity and <br/> Values for Children
               </p>
 
               <div className="w-full h-[3px] bg-[#2f5d50]">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
-                  style={{ width: progress30 + "%" }}
+                  style={{ width: progress100 + "%" }}
                 ></div>
               </div>
 
             </div>
 
-            {/* 95% */}
+            {/* 100% */}
             <div className=" border-l border-gray-300 pl-8">
 
-              <h2 className="text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{count95}%</h2>
+              <h2 className="text-6xl text-[#2f5d50] font-bold flex items-center justify-center">{counta100}%</h2>
 
               <p className="text-sm mt-3 text-[#2f5d50] mb-6 flex items-center justify-center">
-                They are in a job related to their field of study
+                Parent Satisfaction & <br/>Academic Success 
               </p>
 
               <div className="w-full h-[3px] bg-[#2f5d50]">
                 <div
                   className="h-[3px] bg-white transition-all duration-300"
-                  style={{ width: progress95 + "%" }}
+                  style={{ width: progressa100 + "%" }}
                 ></div>
               </div>
 
@@ -163,13 +156,11 @@ export default function AboutSectionPage() {
           </div>
           <div className="">
             <h2 className="text-3xl text-[#2f5d50] md:text-4xl font-bold mt-6 leading-snug">
-              The right opportunity can turn dreams into limitless potential.
+              Strong foundations today, brighter opportunities tomorrow.
             </h2>
 
             <p className="text-[#2f5d50] mt-4">
-              Founded in 1970, our institute is a community driven institution
-              renowned for its unique contributions to education and student
-              success.
+              “Founded in 1999 by [Founder’s Name] in [Location], Jahnawi School has been committed to nurturing children from LKG to Class 8 with care, creativity, and strong values. We believe the right opportunity helps every child shine — whether through academics, extracurricular activities, or character-building experiences. With dedicated teachers, a safe environment, and a focus on holistic growth, Jahnawi School ensures that every student receives the right start to their educational journey, laying strong foundations for lifelong success.”
             </p>
           </div>
 

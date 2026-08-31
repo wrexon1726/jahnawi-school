@@ -6,29 +6,29 @@ import { motion } from "framer-motion";
 const testimonials = [
   {
     id: 1,
-    name: "Lucas Anderson",
-    text: "His study method works amazingly well. I improved my coding skills quickly.",
+    name: "Dheeraj Shrivastava",
+    text: "We are proud to be part of Jahnawi School. The teachers truly care about each child’s growth and happiness.",
     image: "/images/user1.jpg",
     rating: 5,
   },
   {
     id: 2,
-    name: "Jacob Jones",
-    text: "Moving from free tutorials to structured learning made a huge difference.",
+    name: "Sunny Kurmi",
+    text: "My son in Grade 2 has become more confident and curious thanks to the supportive environment here.",
     image: "/images/user2.jpg",
     rating: 5,
   },
   {
     id: 3,
-    name: "Sophia Smith",
-    text: "Great mentorship and practical projects helped me build confidence.",
+    name: "Mohd Wali",
+    text: "The school feels like a second home for our children — safe, nurturing, and full of opportunities to learn.",
     image: "/images/user3.jpg",
     rating: 5,
   },
   {
     id: 4,
-    name: "Ralph Edwards",
-    text: "The learning experience is very interactive and beginner friendly.",
+    name: "Vikash",
+    text: "From LKG to Grade 8, the focus on values and creativity makes Jahnawi School special.",
     image: "/images/user4.jpg",
     rating: 5,
   },
@@ -46,7 +46,7 @@ export default function TestimonialSectionPage() {
           </span>
 
           <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Voices From Our Global Community
+            Voices From Our Parents Community
           </h2>
         </div>
 
