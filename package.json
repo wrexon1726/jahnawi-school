@@ -1,5 +1,5 @@
 {
-  "name": "25 Rupiya",
+  "name": "Jahnawi School",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,7 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
-    "22": "^0.0.0",
+    "@googleapis/sheets": "^14.0.0",
     "@gsap/react": "^2.1.2",
     "@remixicon/react": "^4.6.0",
     "framer-motion": "^12.38.0",

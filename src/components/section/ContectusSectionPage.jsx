@@ -8,6 +8,18 @@ export default function ContactSection() {
   const [show, setShow] = useState(false);
   const [loading, setLoading] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
+  const [isError, setIsError] = useState(false);
+  const [popupMessage, setPopupMessage] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
 
   const sectionRef = useRef(null);
 
@@ -36,15 +48,39 @@ export default function ContactSection() {
   }, []);
 
   // Submit handler
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     setLoading(true);
 
-    setTimeout(() => {
-      setLoading(false);
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await res.json();
+
+      if (data.success) {
+        setIsError(false);
+        setPopupMessage("Thank you for contacting us.\nWe will contact you soon.");
+        setShowPopup(true);
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        setIsError(true);
+        setPopupMessage(data.error || "Something went wrong.");
+        setShowPopup(true);
+      }
+    } catch (error) {
+      setIsError(true);
+      setPopupMessage("An error occurred. Please try again.");
       setShowPopup(true);
-    }, 4000);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -102,26 +138,42 @@ export default function ContactSection() {
 
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
                 placeholder="Your Name"
                 className="w-full border border-gray-300 px-4 py-3 rounded-lg outline-none focus:border-[#2f6b5f]"
+                required
               />
 
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
                 placeholder="Your Email"
                 className="w-full border border-gray-300 px-4 py-3 rounded-lg outline-none focus:border-[#2f6b5f]"
+                required
               />
 
               <input
                 type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 placeholder="Phone Number"
                 className="w-full border border-gray-300 px-4 py-3 rounded-lg outline-none focus:border-[#2f6b5f]"
+                required
               />
 
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="5"
                 placeholder="Your Message"
                 className="w-full border border-gray-300 px-4 py-3 rounded-lg outline-none focus:border-[#2f6b5f]"
+                required
               ></textarea>
 
               {/* BUTTON */}
@@ -159,21 +211,21 @@ export default function ContactSection() {
               ×
             </button>
 
-            {/* Success Icon */}
+            {/* Status Icon */}
             <div className="flex justify-center mb-4">
-              <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center">
-                <span className="text-3xl text-green-600">✓</span>
+              <div className={`w-16 h-16 rounded-full flex items-center justify-center ${isError ? 'bg-red-100' : 'bg-green-100'}`}>
+                <span className={`text-3xl ${isError ? 'text-red-600' : 'text-green-600'}`}>
+                  {isError ? '×' : '✓'}
+                </span>
               </div>
             </div>
 
-            <h3 className="text-2xl font-bold text-center text-green-600">
-              Message Sent Successfully!
+            <h3 className={`text-2xl font-bold text-center ${isError ? 'text-red-600' : 'text-green-600'}`}>
+              {isError ? 'Error!' : 'Message Sent Successfully!'}
             </h3>
 
-            <p className="text-center text-gray-600 mt-4">
-              Thank you for contacting us.
-              <br />
-              We will contact you soon.
+            <p className="text-center text-gray-600 mt-4 whitespace-pre-line">
+              {popupMessage}
             </p>
 
             {/* OK BUTTON */}
