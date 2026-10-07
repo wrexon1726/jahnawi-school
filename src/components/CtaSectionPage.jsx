@@ -1,32 +1,69 @@
-export default function CtaSectionPage() {
+"use client";
+
+import { ArrowRight, Sparkles, PhoneCall } from "lucide-react";
+import { motion } from "framer-motion";
+
+export default function CtaSection() {
   return (
-    <section className="py-24">
-      <div className="flex justify-center pb-35">
-      <div className="absolute bg-white  shadow-inner shadow-[#2f5d50] max-w-7xl w-full text-center py-16 px-8 overflow-hidden">
+    <section className="bg-slate-50/50 py-16 sm:py-24 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Main CTA Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5 }}
+          className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#2f5d50] via-[#285246] to-[#1d3d34] text-white px-6 py-14 sm:py-20 sm:px-12 text-center shadow-2xl"
+        >
 
-        {/* Left Decorative Blur */}
-        <div className="absolute left-0 top-1/2 -translate-y-1/2 w-40 h-40 bg-green-200 blur-3xl opacity-40"></div>
+          {/* Ambient Decorative Glows */}
+          <div className="pointer-events-none absolute -top-24 -left-24 w-80 h-80 bg-emerald-400/20 rounded-full blur-3xl" />
+          <div className="pointer-events-none absolute -bottom-24 -right-24 w-80 h-80 bg-teal-300/15 rounded-full blur-3xl" />
 
-        {/* Right Decorative Blur */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-40 h-40 bg-green-200 blur-3xl opacity-40"></div>
+          {/* Top Pill Badge */}
+          <div className="inline-flex items-center gap-2 bg-white/15 text-white/95 text-xs font-semibold tracking-wide uppercase px-3.5 py-1.5 rounded-full border border-white/20 backdrop-blur-sm mb-6">
+            <Sparkles size={14} className="text-white/80" />
+            <span>Admissions Open for 2025–26</span>
+          </div>
 
-        {/* Content */}
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-          Begin your child’s journey <br />
-          toward a brighter future 
-        </h2>
+          {/* Main Heading */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.2] max-w-2xl mx-auto">
+            Begin Your Child’s Journey Toward a Brighter Future
+          </h2>
 
-        <p className="text-gray-500 mt-4 max-w-xl mx-auto">
-          Join a nurturing school community focused on <br/> 
-          creativity, values, and lifelong learning.
-        </p>
+          {/* Subtext */}
+          <p className="mt-4 text-base sm:text-lg text-white/80 max-w-xl mx-auto leading-relaxed">
+            Join a supportive school family focused on foundational excellence, creative discovery, and lifelong confidence from LKG to Grade 8.
+          </p>
 
-        <button className="mt-8 bg-[#2f5d50] text-white px-6 py-3 rounded-full hover:bg-[#24493f] transition">
-          Enroll Now
-        </button>
+          {/* Action Buttons */}
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mt-8 sm:mt-10">
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 bg-white text-[#2f5d50] px-7 py-3.5 rounded-full text-sm font-bold shadow-lg hover:bg-slate-100 transition-all duration-200 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+            >
+              Enroll Now
+              <ArrowRight size={16} />
+            </button>
 
-      </div> 
-      </div> 
+            <button
+              type="button"
+              className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 text-white border border-white/20 px-6 py-3.5 rounded-full text-sm font-semibold transition-all duration-200 active:scale-95 backdrop-blur-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+            >
+              <PhoneCall size={15} />
+              Book a Campus Visit
+            </button>
+          </div>
+
+          {/* Micro Trust Note */}
+          <p className="mt-6 text-xs text-white/60 tracking-wide">
+            Limited seats available per class to ensure personalized attention.
+          </p>
+
+        </motion.div>
+
+      </div>
     </section>
   );
 }

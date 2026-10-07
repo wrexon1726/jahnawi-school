@@ -1,133 +1,168 @@
 "use client";
 
 import Image from "next/image";
+import { Star, Quote, HeartHandshake } from "lucide-react";
 import { motion } from "framer-motion";
 
 const testimonials = [
   {
     id: 1,
     name: "Dheeraj Shrivastava",
-    text: "We are proud to be part of Jahnawi School. The teachers truly care about each child’s growth and happiness.",
-    image: "/images/user1.jpg",
+    role: "Parent of Grade 4 Student",
+    text: "We are proud to be part of Jahnawi School. The teachers truly care about each child’s personal growth, moral values, and day-to-day happiness.",
+    image: "",
     rating: 5,
   },
   {
     id: 2,
     name: "Sunny Kurmi",
-    text: "My son in Grade 2 has become more confident and curious thanks to the supportive environment here.",
-    image: "/images/user2.jpg",
+    role: "Parent of Grade 2 Student",
+    text: "My son has become remarkably more confident and articulate thanks to the interactive, curiosity-first classroom environment.",
+    image: "",
     rating: 5,
   },
   {
     id: 3,
     name: "Mohd Wali",
-    text: "The school feels like a second home for our children — safe, nurturing, and full of opportunities to learn.",
-    image: "/images/user3.jpg",
+    role: "Parent of Grade 6 Student",
+    text: "The school feels like an extended home for our children — safe, nurturing, disciplined, and packed with practical learning opportunities.",
+    image: "",
     rating: 5,
   },
   {
     id: 4,
-    name: "Vikash",
-    text: "From LKG to Grade 8, the focus on values and creativity makes Jahnawi School special.",
-    image: "/images/user4.jpg",
+    name: "Vikash Sharma",
+    role: "Parent of UKG Student",
+    text: "From early learning foundation to middle school, their balance of academic rigor and creative arts is truly exceptional.",
+    image: "",
     rating: 5,
   },
 ];
 
-export default function TestimonialSectionPage() {
+export default function TestimonialSection() {
   return (
-    <section className="bg-gray-100 py-20 px-6">
-      <div className="max-w-6xl mx-auto">
+    <section className="bg-slate-50/60 py-16 sm:py-24 px-4 sm:px-6 lg:px-8 border-t border-gray-100">
+      <div className="max-w-7xl mx-auto">
 
-        {/* Heading */}
-        <div className="text-center mb-14">
-          <span className="bg-gray-200 px-4 py-1 rounded-full text-sm">
-            Testimonials
-          </span>
+        {/* Section Header */}
+        <div className="flex flex-col items-center text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <div className="inline-flex items-center gap-2 bg-[#2f5d50]/10 text-[#2f5d50] text-xs sm:text-sm font-semibold tracking-wide px-3.5 py-1.5 rounded-full border border-[#2f5d50]/15 mb-4">
+            <HeartHandshake size={14} className="text-[#2f5d50]" />
+            <span>Parent Testimonials</span>
+          </div>
 
-          <h2 className="text-3xl md:text-4xl font-bold mt-4">
-            Voices From Our Parents Community
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 tracking-tight leading-tight">
+            Voices From Our School Family
           </h2>
+          <p className="mt-3 text-sm sm:text-base text-gray-600 leading-relaxed">
+            Discover how our nurturing environment and dedicated educators leave a lasting impact on young learners and their families.
+          </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid md:grid-cols-3 gap-6">
+        {/* Testimonials Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 items-stretch">
 
-          {/* Highlight Card */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
+          {/* Featured / Highlight Card */}
+          <motion.article
+            initial={{ opacity: 0, y: 24 }}
             whileInView={{ opacity: 1, y: 0 }}
-            className="bg-gradient-to-br from-[#2f5d50] to-[#24493f] text-white p-6 rounded-2xl md:row-span-2 flex flex-col justify-between shadow-lg"
+            viewport={{ once: true, margin: "-40px" }}
+            transition={{ duration: 0.5 }}
+            className="relative lg:row-span-2 bg-gradient-to-br from-[#2f5d50] to-[#21433a] text-white p-7 sm:p-8 rounded-3xl shadow-xl flex flex-col justify-between overflow-hidden"
           >
-            <p className="text-sm leading-relaxed opacity-90">
-              "Study-based learning experience helped me understand concepts
-              better and build real projects."
-            </p>
+            {/* Decorative subtle background quote */}
+            <Quote
+              size={120}
+              className="absolute -top-4 -right-4 text-white/5 pointer-events-none rotate-180"
+            />
 
-            <div className="flex items-center gap-3 mt-6">
-              <Image
-                src="/images/main.jpg"
-                width={42}
-                height={42}
-                className="rounded-full object-cover"
-                alt="user"
-              />
+            <div>
+              {/* Star Rating */}
+              <div className="flex items-center gap-1 text-amber-300 mb-6">
+                {Array.from({ length: 5 }).map((_, i) => (
+                  <Star key={i} size={15} fill="currentColor" strokeWidth={0} />
+                ))}
+              </div>
+
+              <blockquote className="text-base sm:text-lg font-medium leading-relaxed text-white/95">
+                “Enrolling our daughter at Jahnawi School was the best decision for her early years. The holistic focus on science labs, arts, and character building has helped her thrive with genuine joy.”
+              </blockquote>
+            </div>
+
+            {/* Author Info */}
+            <div className="flex items-center gap-3.5 pt-8 mt-6 border-t border-white/15">
+              <div className="relative w-11 h-11 rounded-full overflow-hidden border-2 border-white/20 shrink-0 shadow-sm">
+                <Image
+                  src=""
+                  alt="Pooja & Rakesh Verma"
+                  fill
+                  className="object-cover"
+                />
+              </div>
               <div>
-                <p className="text-sm font-semibold">
-                  Eddie Alexander
+                <p className="text-sm font-bold text-white tracking-wide">
+                  Pooja & Rakesh Verma
                 </p>
-                <p className="text-xs opacity-70">
-                  Student
+                <p className="text-xs text-white/70">
+                  Parents of Grade 3 Student
                 </p>
               </div>
             </div>
-          </motion.div>
+          </motion.article>
 
-          {/* Other Testimonials */}
+          {/* Standard Parent Testimonial Cards */}
           {testimonials.map((item, index) => (
-            <motion.div
+            <motion.article
               key={item.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="bg-white p-6 rounded-2xl shadow-sm hover:shadow-lg transition"
+              viewport={{ once: true, margin: "-40px" }}
+              transition={{ duration: 0.45, delay: index * 0.08 }}
+              className="group bg-white p-6 sm:p-7 rounded-3xl border border-gray-100 shadow-xs hover:shadow-md hover:border-gray-200 transition-all duration-200 flex flex-col justify-between"
             >
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {item.text}
-              </p>
+              <div>
+                {/* Dynamic Star Rating */}
+                <div className="flex items-center gap-1 text-amber-400 mb-4">
+                  {Array.from({ length: item.rating }).map((_, i) => (
+                    <Star
+                      key={i}
+                      size={14}
+                      fill="currentColor"
+                      strokeWidth={0}
+                    />
+                  ))}
+                </div>
 
-              <div className="flex items-center gap-3 mt-6">
+                <blockquote className="text-sm sm:text-[15px] text-gray-700 leading-relaxed">
+                  “{item.text}”
+                </blockquote>
+              </div>
 
-                {/* Image */}
-                <div className="overflow-hidden rounded-full">
+              {/* Author Info */}
+              <div className="flex items-center gap-3.5 pt-5 mt-5 border-t border-gray-100">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden border border-gray-100 shrink-0">
                   <Image
                     src={item.image}
-                    width={36}
-                    height={36}
-                    className="object-cover transition duration-300 hover:scale-110"
                     alt={item.name}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
                 </div>
 
-                <div>
-                  <p className="text-sm font-semibold">
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-gray-900 truncate">
                     {item.name}
                   </p>
-
-                  {/* Dynamic Stars */}
-                  <div className="flex text-yellow-500 text-xs">
-                    {Array.from({ length: item.rating }).map((_, i) => (
-                      <span key={i}>★</span>
-                    ))}
-                  </div>
+                  <p className="text-xs text-gray-500 truncate">
+                    {item.role}
+                  </p>
                 </div>
-
               </div>
-            </motion.div>
+            </motion.article>
           ))}
 
         </div>
+
       </div>
     </section>
   );
